@@ -12,3 +12,8 @@ provider:
 functions:
   hello:
     handler: handler.hello
+    timeout: 30
+    events:
+      - http: 
+          path: /{proxy+}
+          method: any
